@@ -1,0 +1,17 @@
+= How to release to npm
+:version: 0.0.3
+:repo: asciidoctor-tabset-block
+:bundle: djencks-asciidoctor-tabset-block
+:url: https://gitlab.com/djencks/{repo}/-/jobs/artifacts/master/raw/{bundle}-v{version}.tgz?job=bundle-stable
+
+
+* Update this file, package.json, and the two README files with the new version.
+* Push to master at gitlab
+* When the CI completes the bundle to release should be at:
+{url}
+
+* Run
+npm publish --access public {url} --dry-run
+
+* Run
+npm publish --access public {url}
